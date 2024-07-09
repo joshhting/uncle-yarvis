@@ -1,0 +1,18 @@
+{
+		"manifest_version": 3,
+		"name": "Web Uncle Istvan",
+		"description": "Bring the Uncle Istvan experience to the browser",
+		"version": "1.0",
+		"action": {
+			"default_popup": "istvan.html",
+			"default_icon": "istvan.png"
+		},
+		"content_scripts": [
+			{
+				"js": ["scripts/content.js"],
+				"matches": [
+					"https://articles.starcitygames.com/articles/*"
+				]
+			}
+		]
+	}
