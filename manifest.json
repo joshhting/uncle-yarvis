@@ -14,5 +14,11 @@
 					"https://articles.starcitygames.com/articles/*"
 				]
 			}
+		],
+		"web_accessible_resources": [
+			{
+			  "resources": ["istvan.png"],
+			  "matches": ["<all_urls>"]
+			}
 		]
 	}
