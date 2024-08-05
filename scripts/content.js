@@ -1,16 +1,36 @@
+var mainElement;
 
-const article = document.querySelector("article");
-const main = document.querySelector("main");
+if (window.location.hostname == 'www.youtube.com' || window.location.hostname == 'youtube.com') {
+	mainElement = document.body;
+} else if (document.querySelector("article")) {
+	mainElement = document.querySelector("article");
+} else if (document.querySelector("main")) {
+	mainElement = document.querySelector("main");
+}
 
-if (article || main) {
+if (mainElement) {
+	console.log(mainElement.innerText);
 	// find pattern
 	// const regex = new RegExp(regexPattern, 'g');
 	const regex = /\b\w+(?:er|or)\b/g;
-	const matches = document.body.innerText.match(regex);
+	const matches = mainElement.innerText.match(regex);
+	if (!matches) {
+		return null;
+	}
 	var target = matches[Math.floor(Math.random() * matches.length)];
 	target = target.charAt(0).toUpperCase() + target.slice(1); // capitalize 1st letter
 
 	// I'm Uncle Yarvis
+
+	// Where'd you get it
+
+	// Why do they call it
+
+	// I like Dune 2
+
+	// 55 burgers
+
+	// What if we get to 
 
 	// notify user
 	const istvan = document.createElement("div");
@@ -57,7 +77,7 @@ if (article || main) {
 		100% {
 			left: calc(100% - 100px);
 		}
-	}
+	} 
 	`;
 	styleElement.appendChild(document.createTextNode(speechStyle));
 	document.head.appendChild(styleElement);

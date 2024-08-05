@@ -3,6 +3,9 @@
 	"name": "Uncle Yarvis",
 	"description": "Bring the Uncle Istvan experience to the browser",
 	"version": "1.0",
+	"icons": {
+		"128": "istvan.png"
+	},
 	"action": {
 		"default_popup": "istvan.html",
 		"default_icon": "istvan.png"
