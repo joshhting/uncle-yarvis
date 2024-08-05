@@ -1,25 +1,26 @@
 {
-		"manifest_version": 3,
-		"name": "Uncle Yarvis",
-		"description": "Bring the Uncle Istvan experience to the browser",
-		"version": "1.0",
-		"action": {
-			"default_popup": "istvan.html",
-			"default_icon": "istvan.png"
-		},
-		"content_scripts": [
-			{
-				"js": ["scripts/content.js"],
-				"matches": [
-					"https://articles.starcitygames.com/articles/*",
-					"https://*/wiki/*"
-				]
-			}
-		],
-		"web_accessible_resources": [
-			{
-			  "resources": ["istvan.png"],
-			  "matches": ["<all_urls>"]
-			}
-		]
-	}
+	"manifest_version": 3,
+	"name": "Uncle Yarvis",
+	"description": "Bring the Uncle Istvan experience to the browser",
+	"version": "1.0",
+	"action": {
+		"default_popup": "istvan.html",
+		"default_icon": "istvan.png"
+	},
+	"content_scripts": [
+		{
+			"js": ["scripts/content.js"],
+			"matches": [
+				"https://articles.starcitygames.com/articles/*",
+				"https://*/wiki/*",
+				"https://www.youtube.com/*"
+			]
+		}
+	],
+	"web_accessible_resources": [
+		{
+			"resources": ["istvan.png"],
+			"matches": ["<all_urls>"]
+		}
+	]
+}
