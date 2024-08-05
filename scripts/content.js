@@ -17,14 +17,14 @@ if (article || main) {
 	istvan.className = "animated";
 	istvan.textContent = target + "? I barely know her!";
 	istvan.style.position = 'fixed';
-	istvan.style.bottom = '130px';
-	istvan.style.left = '10px';
+	istvan.style.bottom = '-100px';
+	istvan.style.right = '10px';
 	istvan.style.borderRadius = '15px';
 	istvan.style.border = '2px solid black';
 	istvan.style.padding = '5px';
 	istvan.style.backgroundColor = '#ffffff';
 	istvan.style.color = '#000000';
-	istvan.style.animation = 'moveRight 1s forwards';
+	istvan.style.animation = 'moveSpeechUp 1s forwards 1s';
 	document.body.appendChild(istvan);
 
 	// Create CSS rule for the pseudo-element
@@ -41,7 +41,16 @@ if (article || main) {
 		border-color: #000000 transparent transparent transparent;
 	}
 
-	@keyframes moveRight {
+	@keyframes moveSpeechUp {
+		0% {
+			bottom: -100px;
+		}
+		100% {
+			bottom: 130px;
+		}
+	}
+
+	@keyframes moveImgRight {
 		0% {
 			left: 0; 
 		}
@@ -64,6 +73,6 @@ if (article || main) {
 	img.style.height = '100px'; // Adjust the size as needed
 	img.style.zIndex = '1000';
 	img.style.borderRadius = '15px';
-	img.style.animation = 'moveRight 1s forwards';
+	img.style.animation = 'moveImgRight 1s forwards';
 	istvan.appendChild(img);
 }
