@@ -1,6 +1,6 @@
 # Uncle Yarvis
 
-Only works in wikis or SCG articles
+Only works on wikis, SCG articles, or The Onion articles.
 
 ## Run in developer's mode
 

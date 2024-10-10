@@ -10,30 +10,48 @@ if (window.location.hostname == 'www.youtube.com' || window.location.hostname ==
 
 if (mainElement) {
 	console.log(mainElement.innerText);
-	// find pattern
-	// const regex = new RegExp(regexPattern, 'g');
-	const regex = /\b\w+(?:er|or)\b/g;
-	const matches = mainElement.innerText.match(regex);
-	if (matches) {
-		var target = matches[Math.floor(Math.random() * matches.length)];
+	var matches = [];
+	var target;
+
+	const regex1 = /\b\w+(?:er|or)\b/g;
+	const matches1 = mainElement.innerText.match(regex1);
+	if (matches1) {
+		target = matches1[Math.floor(Math.random() * matches1.length)];
 		target = target.charAt(0).toUpperCase() + target.slice(1); // capitalize 1st letter
+		matches.push(target + "? I barely know her!");
+	}
 
-		// I'm Uncle Yarvis
+	const regex2 = /\bnice\b\s[\w-]+/gi;
+	const matches2 = mainElement.innerText.match(regex2);
+	if (matches2) {
+		target = matches2[Math.floor(Math.random() * matches2.length)].substring(4);
+		matches.push("Nice " + target + ", where'd you get it? The " + target + " store?");
+	}
 
-		// Where'd you get it
+	const regex3 = /\b(2|two)\b\s[\w-]+/g;
+	const matches3 = mainElement.innerText.match(regex3);
+	if (matches3) {
+		target = matches3[Math.floor(Math.random() * matches3.length)];
+		if (target.charAt(0) === 't') {
+			target = "2" + target.substring(3);
+		}
+		matches.push("Yeah I like Dune 2. Dune " + target + " at the same time");
+	}
 
-		// Why do they call it
+	const regex4 = /55 [\w-]+/g;
+	const matches4 = mainElement.innerText.match(regex4);
+	if (matches4) {
+		target = matches4[Math.floor(Math.random() * matches4.length)].toUpperCase();
+		matches.push(target + " 55 BURGERS 55 FRIES");
+	}
 
-		// I like Dune 2
 
-		// 55 burgers
-
-		// What if we get to 
+	if (matches) {
 
 		// notify user
 		const istvan = document.createElement("div");
 		istvan.className = "animated";
-		istvan.textContent = target + "? I barely know her!";
+		istvan.textContent = matches[Math.floor(Math.random() * matches.length)];
 		istvan.style.position = 'fixed';
 		istvan.style.bottom = '-100px';
 		istvan.style.right = '10px';

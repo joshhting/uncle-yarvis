@@ -1,8 +1,8 @@
 {
 	"manifest_version": 3,
 	"name": "Uncle Yarvis",
-	"description": "Bring the Uncle Istvan experience to the browser",
-	"version": "1.0",
+	"description": "Bring the Uncle Istvan experience to the browser. Displays a popup that jokes about content on the page.",
+	"version": "1.1",
 	"icons": {
 		"128": "istvan.png"
 	},
@@ -16,6 +16,7 @@
 			"matches": [
 				"https://articles.starcitygames.com/articles/*",
 				"https://*/wiki/*",
+				"https://theonion.com/*",
 				"https://www.youtube.com/*"
 			]
 		}
