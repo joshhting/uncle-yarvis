@@ -1,20 +1,31 @@
 var mainElement;
 
-if (window.location.hostname == 'www.youtube.com' || window.location.hostname == 'youtube.com') {
-	mainElement = document.body;
-} else if (document.querySelector("article")) {
-	mainElement = document.querySelector("article");
-} else if (document.querySelector("main")) {
-	mainElement = document.querySelector("main");
+
+if (window.location.hostname == 'www.reddit.com') {
+	var text = Array.from(document.querySelectorAll('article[aria-label]'))
+			.map(article => article.getAttribute('aria-label'))
+			.join('\n');
+	if (text == "") {
+		text = document.querySelector("h1").ariaLabel;
+	}
+} else {
+	if (window.location.hostname == 'www.youtube.com' || window.location.hostname == 'youtube.com') {
+		mainElement = document.body;
+	} else if (document.querySelector("main")) {
+		mainElement = document.querySelector("main");
+	} else if (document.querySelector("article")) {
+		mainElement = document.querySelector("article");
+	}
+	text = mainElement.innerText;
 }
 
-if (mainElement) {
-	console.log(mainElement.innerText);
+
+if (text) {
 	var matches = [];
 	var target;
 
-	const regex1 = /\b\w+(?:er|or)\b/g;
-	const matches1 = mainElement.innerText.match(regex1);
+	const regex1 = /\b(?!for\b)\w+(?:er|or)\b/g;
+	const matches1 = text.match(regex1);
 	if (matches1) {
 		target = matches1[Math.floor(Math.random() * matches1.length)];
 		target = target.charAt(0).toUpperCase() + target.slice(1); // capitalize 1st letter
@@ -22,14 +33,14 @@ if (mainElement) {
 	}
 
 	const regex2 = /\bnice\b\s[\w-]+/gi;
-	const matches2 = mainElement.innerText.match(regex2);
+	const matches2 = text.match(regex2);
 	if (matches2) {
 		target = matches2[Math.floor(Math.random() * matches2.length)].substring(4);
 		matches.push("Nice " + target + ", where'd you get it? The " + target + " store?");
 	}
 
 	const regex3 = /\b(2|two)\b\s[\w-]+/g;
-	const matches3 = mainElement.innerText.match(regex3);
+	const matches3 = text.match(regex3);
 	if (matches3) {
 		target = matches3[Math.floor(Math.random() * matches3.length)];
 		if (target.charAt(0) === 't') {
@@ -39,14 +50,14 @@ if (mainElement) {
 	}
 
 	const regex4 = /55 [\w-]+/g;
-	const matches4 = mainElement.innerText.match(regex4);
+	const matches4 = text.match(regex4);
 	if (matches4) {
 		target = matches4[Math.floor(Math.random() * matches4.length)].toUpperCase();
 		matches.push(target + " 55 BURGERS 55 FRIES");
 	}
 
 
-	if (matches) {
+	if (matches.length > 0) {
 
 		// notify user
 		const istvan = document.createElement("div");
