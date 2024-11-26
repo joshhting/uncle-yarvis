@@ -1,6 +1,6 @@
 # Uncle Yarvis
 
-Bringing the Uncle Istvan experience to the web. Only works on wikis, SCG/Onion articles, or Reddit.
+Bringing the Uncle Istvan experience to the web. Only works on wikis, SCG/Onion articles, Reddit, and sometimes YouTube.
 
 [Chrome Web Store link](https://chromewebstore.google.com/detail/uncle-yarvis/jnbfdloeehohgiiakdgihimfbigfniib?authuser=0&hl=en)
 
